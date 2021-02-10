@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  trew-starter:
+    container_name: trew-starter
+    environment:
+      - NODE_ENV=production
+      - SERVER_PORT=80
+    build:
+      context: "."
+    ports:
+      - 7001:80

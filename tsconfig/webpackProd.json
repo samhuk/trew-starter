@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "files": [
+    "../webpack/prod.ts"
+  ],
+  "compilerOptions": {
+    "declaration": false,
+    "sourceMap": false,
+    "outDir": "../webpack"
+  }
+}

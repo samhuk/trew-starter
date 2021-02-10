@@ -1,0 +1,14 @@
+FROM node:15.8.0-alpine3.10 as build
+# Copy over npm packges
+COPY ./package.json ./
+COPY ./node_modules ./node_modules
+# Build server (tsc) and client (webpack)
+COPY ./src ./src
+COPY ./tsconfig ./tsconfig
+COPY ./webpack ./webpack
+COPY ./.env-cmdrc.json ./
+RUN npm run build
+
+FROM node:15.8.0-alpine3.10 as release
+COPY --from=build /build /build
+CMD ["node", "/build/src/server/app.js"]

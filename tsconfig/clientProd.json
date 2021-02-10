@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "include": [
+    "../src/client",
+    "../src/common"
+  ],
+  "compilerOptions": {
+    "declaration": false,
+    "sourceMap": false
+  }
+}

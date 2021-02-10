@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "include": [
+    "../src/common",
+    "../src/server"
+  ],
+  "compilerOptions": {
+    "declaration": false,
+    "sourceMap": false,
+    "outDir": "../build"
+  }
+}

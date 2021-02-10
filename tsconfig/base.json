@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+    "target": "es5",
+    "moduleResolution": "node",
+    "allowJs": false,
+    "strictNullChecks": false,
+		"noEmit": false,
+		"strict": true,
+		"isolatedModules": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "sourceMap": true
+	},
+  "exclude": [
+    "**/*node_modules/**/*"
+  ]
+}
