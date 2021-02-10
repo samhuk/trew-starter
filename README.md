@@ -1,21 +1,26 @@
 # trew-starter
 
 ## Description
-A (mostly) production-ready Webpack-Express-React-Typescript website starter project.
+A Typescript-React-Express-Webpack web application starter. This is suitable for a medium to large scale web app.
 
-* Typescript is enforced for all files, from the expressjs, to the react, to even the webpack config files.
-* UI uses Redux for state management
-* Development mode features full react and redux devtools extensions
+Aspects:
+* ExpressJS API
+* Typescript for *all* files
+* React for UI
+* Redux for state management
+* Sass for styling
+* Development and production modes
+* Development mode has react and redux devtools extensions
+
+Current known limitations:
+* No https integration
+* Docker integration could be a little more refined
+* Lack of a script to "set up" the starter
+* For production mode, could use nginx to serve front-end files instead of having both UI and API on one ExpressJS server.
+* Lack of ESLint integration (coming soon)
 
 ## Motivation
-I noticed that there were no starters out there that resembled anything close to a real-life production-ready web application that used Webpack, Typescript, and React. Several exist at the moment, but they lack either some or all of the following:
-* A backend
-* Typescript for *all* files -> typing
-* Docker integration -> containerization
-* Redux integration -> central state management
-* Robust Webpack integration -> bundling, bundle size reduction
-
-The above, or their equivalents, are necessary for a modern prod-ready web application.
+I couldn't find any starters out there that resembled anything close to a realistic web application that used Webpack, Typescript, and React. The similar starters that existed before this appeared to closely resemble a create-react-app landing page with *some* typescript.
 
 ## Contributing
 
