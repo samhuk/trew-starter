@@ -20,7 +20,7 @@ Current known limitations:
 * Lack of ESLint integration (coming soon)
 
 ## Motivation
-I couldn't find any starters out there that resembled anything close to a realistic web application that used Webpack, Typescript, and React. The similar starters that existed before this appeared to closely resemble a create-react-app landing page with *some* typescript.
+I couldn't find any starters out there that was much more than create-react-app with basic typescript integration; lacking a backend, Sass, Redux, etc.
 
 ## Contributing
 
