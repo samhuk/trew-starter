@@ -11,9 +11,10 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "sourceMap": true
+    "sourceMap": true,
+    "skipLibCheck": true
 	},
   "exclude": [
-    "**/*node_modules/**/*"
+    "../node_modules/**/*"
   ]
 }

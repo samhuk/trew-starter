@@ -24,7 +24,6 @@ export const config: webpack.Configuration = merge(base, {
   },
   plugins: [
     new webpack.EnvironmentPlugin({ NODE_ENV: 'production' }),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.optimize.AggressiveMergingPlugin(),
     new OptimizeCssAssetsPlugin({
       cssProcessorOptions: {
@@ -34,7 +33,6 @@ export const config: webpack.Configuration = merge(base, {
     }),
     new CompressionWebpackPlugin({
       test: /\.(js|css|html|svg)$/,
-      filename: '[path].gz[query]',
       algorithm: 'gzip',
       threshold: 8192,
       minRatio: 0.8,

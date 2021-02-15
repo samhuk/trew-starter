@@ -11,6 +11,12 @@ const MOCK_ORDERS: Order[] = [
   { id: 5, uuid: 'abc2', timeCreated: '2011-10-05T14:48:00.000Z', state: 4 }
 ]
 
+const parseOptionalIntQueryParameter = (queryValue: any): { provided: boolean, value: number } => (
+  queryValue == null || queryValue.length === 0
+    ? { provided: false, value: null }
+    : { provided: true, value: parseInt(queryValue) }
+)
+
 export const getSingle: RequestHandler = (req, res) => {
   try {
     if (req.params.uuid == null)
@@ -24,14 +30,23 @@ export const getSingle: RequestHandler = (req, res) => {
 
 export const getMultiple: RequestHandler = (req, res) => {
   try {
-    if (req.query.state > 2)
-      throw invalidRequest('order id must be defined')
+    
+    const parsedState = parseOptionalIntQueryParameter(req.query.state)
+    if (parsedState.provided && parsedState.value == null)
+      throw invalidRequest('state filter paramater is invalid')
+
+    // Testing error logic
+    if (parsedState.provided && parsedState.value > 2)
+      throw invalidRequest('order id above 2 is not supported yet')
+
     let orders = MOCK_ORDERS
-    const stateFilter = req.query.state != null && req.query.state.length > 0 ? parseInt(req.query.state) : null
-    if (stateFilter != null)
-      orders = orders.filter(o => o.state === stateFilter)
+
+    if (parsedState.provided && parsedState.value != null)
+      orders = orders.filter(o => o.state === parsedState.value)
+
     successResponse(req, res, orders)
   } catch (e) {
     handleError(req, res, e)
   }
 }
+

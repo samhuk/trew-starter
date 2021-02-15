@@ -9,11 +9,8 @@ import path from 'path'
 
 /* eslint-disable no-console */
 
-const onServerListenStart = (err: any, port: number) => {
-  if (err)
-    console.log(err)
-  else
-    console.log(`Started. Listening on port ${port}.`)
+const onServerListenStart = (port: number) => {
+  console.log(`Started. Listening on port ${port}.`)
 }
 
 const getPort = () => {
@@ -72,4 +69,4 @@ else {
 }
 
 const port = getPort()
-app.listen(port, '0.0.0.0', err => onServerListenStart(err, port))
+app.listen(port, '0.0.0.0', () => onServerListenStart(port))

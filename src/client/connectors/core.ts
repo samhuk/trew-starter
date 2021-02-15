@@ -49,8 +49,6 @@ export const post = <TResponseData>(
   responseType,
   body: JSON.stringify(body),
 }).pipe(
-  catchError((err, caught) => {
-    return caught
-  }),
-  map(res => ({ error: res.response.error as OutputError, data: res.response.data as TResponseData }))
+  map(res => ({ error: res.response.error as OutputError, data: res.response.data as TResponseData })),
+  catchError(err => of(err.response as ResponseBase<TResponseData>)),
 ).toPromise()

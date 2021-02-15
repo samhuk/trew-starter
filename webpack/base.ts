@@ -51,18 +51,18 @@ export const config: webpack.Configuration = {
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?mimetype=image/svg+xml',
-        options: { name: fileLoaderFileNameTemplate() },
+        loader: 'file-loader',
+        options: { name: fileLoaderFileNameTemplate(), mimetype: 'image/svg+xml' },
       },
       {
         test: /\.woff(2)?(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?mimetype=application/font-woff',
-        options: { name: fileLoaderFileNameTemplate() },
+        loader: 'file-loader',
+        options: { name: fileLoaderFileNameTemplate(), mimetype: 'application/font-woff' },
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader?mimetype=application/octet-stream',
-        options: { name: fileLoaderFileNameTemplate() },
+        loader: 'file-loader',
+        options: { name: fileLoaderFileNameTemplate(), mimeType: 'application/octet-stream' },
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
