@@ -21,7 +21,7 @@ Current known limitations:
 * Lack of ESLint integration (coming soon)
 
 ## Motivation
-I found that the existing starters out there lacked one or more o fhte above listed aspects that I believe are necessary for a medium to large scale web application. I felt like it would be convenient if there was a starter that didn't compromise on detail.
+I found that the existing starters out there lacked one or more of the above listed aspects that I believe are necessary for a medium to large scale web application. I felt like it would be convenient if there was a starter that didn't compromise on detail.
 
 ## Setup
 Find all occurances of "trew-starter" and replace with your desired service name.
