@@ -1,16 +1,17 @@
 # trew-starter
 
 ## Description
-A Typescript-React-Express-Webpack web application starter. This is suitable for a medium to large scale web app.
+A Typescript-React-Express-Webpack web application starter. This is suitable for a medium to large scale web app, containing most of what you will need, with the exception of deployment-specific aspects such as configuration for https, docker swarm, and so on.
 
 Aspects:
-* ExpressJS API
-* Typescript for *all* files
-* React for UI
-* Redux for state management
-* Sass for styling
-* Jest for unit testing
-* Cypress for end-to-end testing
+* **Typescript** for *all* files
+* **React** for UI
+* **ExpressJS** API
+* **Webpack** for client-side bundling
+* **Redux** for state management
+* **Sass** for styling
+* **Jest** for unit testing
+* **Cypress** for end-to-end testing
 * Development and production modes
 * Development mode has react and redux devtools extensions
 
@@ -24,6 +25,9 @@ Current known limitations:
 I couldn't find any starters out there that was much more than create-react-app with basic typescript integration; lacking a backend, Sass, Redux, etc.
 
 ## Contributing
+
+### Prerequisites
+* Ensure that the machine has **python** installed. This is because of node-sass.
 
 ### Building
 * Development mode: `npm run start`
