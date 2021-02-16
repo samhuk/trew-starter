@@ -6,7 +6,7 @@ A Typescript-React-Express-Webpack web application starter. This is suitable for
 Aspects:
 * **Typescript** for *all* files
 * **React** for UI
-* **ExpressJS** API
+* **ExpressJS** for API
 * **Webpack** for client-side bundling
 * **Redux** for state management
 * **Sass** for styling
