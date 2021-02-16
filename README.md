@@ -16,7 +16,6 @@ Aspects:
 * Development mode has react and redux devtools extensions
 
 Current known limitations:
-* No https integration
 * Lack of a script to "set up" the starter
 * For production mode, could use nginx to serve front-end files instead of having both UI and API on one ExpressJS server.
 * Lack of ESLint integration (coming soon)
