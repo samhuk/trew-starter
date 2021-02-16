@@ -8,5 +8,6 @@ services:
       - SERVER_PORT=4001
     build:
       context: "."
+    image: trew-starter:local
     ports:
       - 4001:4001
