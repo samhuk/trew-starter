@@ -21,7 +21,7 @@ Current known limitations:
 * Lack of ESLint integration (coming soon)
 
 ## Motivation
-I couldn't find any starters out there that was much more than create-react-app with basic typescript integration; lacking a backend, Sass, Redux, etc. Most medium to large scale web applications feature at least half of the above listed aspects, so I felt like it would be convenient if there was a starter that didn't compromise on detail.
+I found that the existing starters out there lacked one or more o fhte above listed aspects that I believe are necessary for a medium to large scale web application. I felt like it would be convenient if there was a starter that didn't compromise on detail.
 
 ## Setup
 Find all occurances of "trew-starter" and replace with your desired service name.
