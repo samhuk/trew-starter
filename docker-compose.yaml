@@ -5,8 +5,8 @@ services:
     container_name: trew-starter
     environment:
       - NODE_ENV=production
-      - SERVER_PORT=80
+      - SERVER_PORT=4001
     build:
       context: "."
     ports:
-      - 7001:80
+      - 4001:4001

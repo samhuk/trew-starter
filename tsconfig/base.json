@@ -13,8 +13,5 @@
     "jsx": "react",
     "sourceMap": true,
     "skipLibCheck": true
-	},
-  "exclude": [
-    "../node_modules/**/*"
-  ]
+	}
 }

@@ -3,5 +3,8 @@
   "extends": "./base.json",
   "include": [
     "../src"
+  ],
+  "exclude": [
+    "../src/test"
   ]
 }
