@@ -1,4 +1,4 @@
-# trew-starter
+# 🚀 TREW Starter 
 
 ## Description
 A Typescript-React-Express-Webpack web application starter. This is suitable for a medium to large scale web app, containing most of what you will need, with the exception of deployment-specific aspects such as configuration for https, docker swarm, and so on.
