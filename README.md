@@ -29,12 +29,13 @@ Find all occurances of "trew-starter" and replace with your desired service name
 ## Scripts
 
 ### Prerequisites
-* Ensure that the machine has **python** installed. This is because of node-sass.
+* Ensure that the machine has **python** installed and is available on PATH. This is because of node-sass.
+* `npm install` for node packages.
 
-### Building
+### Running
 * Development mode: `npm run start`
 * Production mode, non-docker: `npm run build && node ./build/src/server/app.js`
-* Production mode, docker: `docker-compose up --build`
+* Production mode, docker: `npm run build-docker && npm run start-docker`
 
 ### Testing
 * All: `npm run test`
