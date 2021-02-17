@@ -1,4 +1,4 @@
-import express from 'express'
+import express, { RequestHandler } from 'express'
 import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
@@ -20,11 +20,21 @@ const getPort = () => {
   return envDefinedPort ?? 8080
 }
 
-const isProduction = process.env.NODE_ENV === 'production'
-const requestDelayMsRaw = process.env.REQUEST_DELAY_MS != null && process.env.REQUEST_DELAY_MS.length > 0
+const getRequestDelayMs = () => {
+  const requestDelayMsRaw = process.env.REQUEST_DELAY_MS != null && process.env.REQUEST_DELAY_MS.length > 0
   ? parseInt(process.env.REQUEST_DELAY_MS)
   : null
-const requestDelayMs = requestDelayMsRaw != null && !isNaN(requestDelayMsRaw) ? Math.max(requestDelayMsRaw, 0) : null
+  return requestDelayMsRaw != null && !isNaN(requestDelayMsRaw) ? Math.max(requestDelayMsRaw, 0) : null
+}
+
+const isProduction = process.env.NODE_ENV === 'production'
+const requestDelayMs = getRequestDelayMs()
+
+const delayMiddleware: RequestHandler = (req, res, next) => {
+  if (requestDelayMs != null)
+    return setTimeout(next, requestDelayMs)
+  next()
+}
 
 const app = express()
 
@@ -35,11 +45,7 @@ if (!isProduction) {
     .use(webpackDevMiddleware(webpackCompiler))
     .use(webpackHotMiddleware(webpackCompiler))
     // -- Optional api request throttle for simulating slow requests (often to show loading animations/pages for longer)
-    .use('/api', (req, res, next) => {
-      if (requestDelayMs != null)
-        return setTimeout(next, requestDelayMs)
-      next()
-    })
+    .use('/api', delayMiddleware)
 }
 
 app
@@ -49,11 +55,7 @@ app
   .use('/api', (req, res, next) => res.sendStatus(404))
 
 if (isProduction) {
-  app.use('/', (req, res, next) => {
-    expressStaticGzip(path.resolve('./build/client'), {
-      enableBrotli: true,
-    })(req, res, next)
-  })
+  app.use('/', expressStaticGzip(path.resolve('./build/client'), { }))
   // Because we are an SPA, any get requests that don't match '/' or the api should route back to '/'
   app.get('*', (req, res) => {
     res.sendFile(path.resolve('./build/client/index.html'))

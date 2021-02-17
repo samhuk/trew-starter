@@ -21,6 +21,7 @@ export const config: webpack.Configuration = merge(base, {
         },
       },
     },
+    minimize: true,
   },
   plugins: [
     new webpack.EnvironmentPlugin({ NODE_ENV: 'production' }),
