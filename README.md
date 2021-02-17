@@ -1,4 +1,4 @@
-# trew-starter
+# 🚀 TREW Starter 
 
 ## Description
 A Typescript-React-Express-Webpack web application starter. This is suitable for a medium to large scale web app, containing most of what you will need, with the exception of deployment-specific aspects such as configuration for https, docker swarm, and so on.
@@ -14,6 +14,7 @@ Aspects:
 * **Cypress** for end-to-end testing
 * Development and production modes
 * Development mode has react and redux devtools extensions
+* An example model ("Order") to demonstrate the use of the other technologies
 
 Current known limitations:
 * Lack of a script to "set up" the starter
@@ -42,6 +43,7 @@ Find all occurances of "trew-starter" and replace with your desired service name
 * unit: `npm run test-unit`
 * e2e (development mode): `npm run test-e2e-dev`
 * e2e (production mode): `npm run test-e2e-prod`
+* Please see the other scripts in the package.json file for the complete list.
 
 ### Advised IDE Extensions
 
