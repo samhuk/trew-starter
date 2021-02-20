@@ -3,9 +3,9 @@ import webpack from 'webpack'
 import webpackDevMiddleware from 'webpack-dev-middleware'
 import webpackHotMiddleware from 'webpack-hot-middleware'
 import expressStaticGzip from 'express-static-gzip'
+import path from 'path'
 import devWebpackConfig from '../../webpack/dev'
 import api from './api'
-import path from 'path'
 
 /* eslint-disable no-console */
 
@@ -22,17 +22,19 @@ const getPort = () => {
 
 const getRequestDelayMs = () => {
   const requestDelayMsRaw = process.env.REQUEST_DELAY_MS != null && process.env.REQUEST_DELAY_MS.length > 0
-  ? parseInt(process.env.REQUEST_DELAY_MS)
-  : null
-  return requestDelayMsRaw != null && !isNaN(requestDelayMsRaw) ? Math.max(requestDelayMsRaw, 0) : null
+    ? parseInt(process.env.REQUEST_DELAY_MS)
+    : null
+  return requestDelayMsRaw != null && !Number.isNaN(requestDelayMsRaw) ? Math.max(requestDelayMsRaw, 0) : null
 }
 
 const isProduction = process.env.NODE_ENV === 'production'
 const requestDelayMs = getRequestDelayMs()
 
 const delayMiddleware: RequestHandler = (req, res, next) => {
-  if (requestDelayMs != null)
-    return setTimeout(next, requestDelayMs)
+  if (requestDelayMs != null) {
+    setTimeout(next, requestDelayMs)
+    return;
+  }
   next()
 }
 
@@ -52,7 +54,7 @@ app
   // -- Handle api requests
   .use('/api', api)
   // -- Send 404 for api requests that don't match an api route
-  .use('/api', (req, res, next) => res.sendStatus(404))
+  .use('/api', (req, res) => res.sendStatus(404))
 
 if (isProduction) {
   app.use('/', expressStaticGzip(path.resolve('./build/client'), { }))

@@ -25,7 +25,7 @@ const createServiceTimeoutErrorData = (serviceName: string, timeoutSeconds: numb
     message: `Service '${serviceName}' timed out after ${timeoutSeconds} seconds.`,
     serviceName,
     timeoutSeconds,
-  }
+  },
 })
 
 export const notFound = (message: string): Error => createError(createNotFoundErrorData(message))

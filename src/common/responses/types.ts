@@ -1,4 +1,4 @@
-import { OutputError } from "../errors/types";
+import { OutputError } from '../errors/types';
 
 export type ResponseBase<TData = any> = {
   error: OutputError

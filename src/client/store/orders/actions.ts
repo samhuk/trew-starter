@@ -3,19 +3,15 @@ import { SET_ORDERS_FILTER, RESET_ORDERS_FILTER, OrdersActionTypes, ORDERS_FETCH
 
 export const setOrdersFilter = (filter: OrdersFilter): OrdersActionTypes => ({
   type: SET_ORDERS_FILTER,
-  filter
+  filter,
 })
 
-export const resetOrdersFilter = (): OrdersActionTypes => ({
-  type: RESET_ORDERS_FILTER,
-})
+export const resetOrdersFilter = (): OrdersActionTypes => ({ type: RESET_ORDERS_FILTER })
 
-export const ordersFetching = (): OrdersActionTypes => ({
-  type: ORDERS_FETCHING,
-})
+export const ordersFetching = (): OrdersActionTypes => ({ type: ORDERS_FETCHING })
 
 export const ordersFetched = (orders: Order[], error: any): OrdersActionTypes => ({
   type: ORDERS_FETCHED,
   orders,
-  error
+  error,
 })

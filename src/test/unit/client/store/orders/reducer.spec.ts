@@ -13,7 +13,7 @@ describe('client/store/orders/reducer', () => {
           ordersFetchingState: null,
         },
         // Action
-        setOrdersFilter({ state: 1 })
+        setOrdersFilter({ state: 1 }),
       )).toEqual({ // Expected new state
         filter: { state: 1 },
         orders: [],

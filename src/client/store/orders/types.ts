@@ -1,5 +1,5 @@
-import { Order, OrdersFilter } from "../../../common/orders/types"
-import { FetchingStateBase } from "../types"
+import { Order, OrdersFilter } from '../../../common/orders/types'
+import { FetchingStateBase } from '../types'
 
 export const SET_ORDERS_FILTER = 'SET_ORDERS_FILTER'
 export const RESET_ORDERS_FILTER = 'RESET_ORDERS_FILTER'
