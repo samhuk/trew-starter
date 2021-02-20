@@ -16,10 +16,10 @@ Aspects:
 * Development mode has react and redux devtools extensions
 * An example model ("Order") to demonstrate the use of the other technologies
 
-Current known limitations:
+Current known limitations/exclusions:
 * Lack of a script to "set up" the starter
 * For production mode, could use nginx to serve front-end files instead of having both UI and API on one ExpressJS server.
-* Lack of ESLint integration (coming soon)
+* Database service. This has been left out so far since I think that this is the most deployment-specific/opinionated aspect.
 
 ## Motivation
 I found that the existing starters out there lacked one or more of the above listed aspects that I believe are necessary for a medium to large scale web application. I felt like it would be convenient if there was a starter that didn't compromise on detail.
