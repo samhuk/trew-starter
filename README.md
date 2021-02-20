@@ -39,11 +39,14 @@ Find all occurances of "trew-starter" and replace with your desired service name
 * Production mode, docker: `npm run build-docker && npm run start-docker`
 
 ### Testing
-* All: `npm run test`
 * unit: `npm run test-unit`
 * e2e (development mode): `npm run test-e2e-dev`
 * e2e (production mode): `npm run test-e2e-prod`
+* unit & e2e: `npm run test`
 * Please see the other scripts in the package.json file for the complete list.
+
+### Development watch script
+* The advised script to use while making changes is `npm run watch-all`. This concurrently starts the dev deployment and runs the unit tests, reloading both when changes occur.
 
 ### Advised IDE Extensions
 
