@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Typescript-React-ExpressJS-Webpack website starter",
   "scripts": {
-    "lint": "eslint --ext .jsx --ext .js,.ts,.tsx src/",
-    "lint-fix": "eslint --ext .jsx --ext .js,.ts,.tsx src/ --fix",
+    "lint": "eslint --ext .ts,.tsx src/",
+    "lint-fix": "eslint --ext .ts,.tsx src/ --fix",
     "test-unit": "jest --config ./src/test/unit/jest.config.ts",
     "test-e2e": "cypress run --config-file ./cypress.json --project ./src/test/e2e",
     "test-e2e-dev": "concurrently \"npm run start\" \"npm run test-e2e\"",
